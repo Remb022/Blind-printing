@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.Region?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo.components.TopBarController"
+      stylesheets="@../css/top_bar.css"
+      styleClass="top-bar"
+      alignment="CENTER_LEFT"
+      prefHeight="45">
+
+    <HBox alignment="CENTER_LEFT" spacing="15">
+        <ImageView preserveRatio="true" fitWidth="30" fitHeight="30">
+            <Image url="@../icon/Trending up.png"/>
+        </ImageView>
+
+        <Text text="Blind printing" styleClass="text-bar"/>
+    </HBox>
+
+    <Region HBox.hgrow="ALWAYS"/>
+
+    <Button onAction="#rollUp"
+            prefWidth="55"
+            prefHeight="45"
+            styleClass="top-bar-button">
+        <graphic>
+            <ImageView preserveRatio="true" fitHeight="20" fitWidth="20">
+                <Image url="@../icon/roll up.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Button onAction="#reduce"
+            prefWidth="55"
+            prefHeight="45"
+            styleClass="top-bar-button">
+        <graphic>
+            <ImageView preserveRatio="true" fitHeight="15" fitWidth="15">
+                <Image url="@../icon/two squares.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+
+    <Button onAction="#closeWindow"
+            prefWidth="55"
+            prefHeight="45"
+            styleClass="top-bar-button">
+        <graphic>
+            <ImageView preserveRatio="true" fitWidth="20" fitHeight="20">
+                <Image url="@../icon/close.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+</HBox>

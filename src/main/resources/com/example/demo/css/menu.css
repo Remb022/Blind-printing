@@ -1,0 +1,29 @@
+.menu {
+    -fx-background-color: #222831;
+    -fx-padding: 0;
+    -fx-border-color: #393E46;
+    -fx-border-width: 0 3 0 0;
+}
+.settings-menu {
+    -fx-background-color: #222831;
+    -fx-padding: 0;
+    -fx-border-color: #393E46;
+    -fx-border-width: 3 0 0 0;
+}
+
+.button-menu {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0px;
+    -fx-border-width: 0px;
+    -fx-border-radius: 0px;
+    -fx-effect: null;
+}
+.active-button-menu {
+    -fx-background-color: #00ADB5;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0px;
+    -fx-border-width: 0px;
+    -fx-border-radius: 0px;
+    -fx-effect: null;
+}

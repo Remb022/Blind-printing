@@ -1,0 +1,41 @@
+.home-view-style {
+    -fx-background-color: #222831;
+    -fx-padding: 0;
+    -fx-background-radius: 30 30 0 0;
+    -fx-effect: dropshadow(gaussian, #00000090, 10, 0.2, 0, 4);
+}
+
+.text-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.text-custom-style {
+    -fx-fill: #00ADB5;
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+}
+
+.VBox-custom-style {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.Tile-pane-custom {
+    -fx-background-color: transparent;
+    -fx-padding: 0 50 0 50;
+}
+
+.scroll-pane-custom {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.scroll-pane-custom > .viewport {
+    -fx-background-color: transparent;
+}
+.scroll-pane-custom .scroll-bar:vertical {
+    -fx-opacity: 0; /* Полностью делает элемент прозрачным (невидимым), но он всё ещё занимает место в layout'е и может получать события мыши.  */
+    -fx-max-width: 0;
+    -fx-max-height: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.view.InfoViewController"
+            stylesheets="@../css/view_info.css"
+            styleClass="info-view-style">
+    <VBox AnchorPane.rightAnchor="0.0"
+          AnchorPane.leftAnchor="0.0"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0"
+          alignment="CENTER">
+        <Text text="Info view" styleClass="text-style"/>
+    </VBox>
+</AnchorPane>

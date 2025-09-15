@@ -1,0 +1,52 @@
+.card-background {
+    -fx-background-color: transparent;
+    -fx-background-radius: 15;
+    -fx-padding: 0;
+}
+
+.card-top {
+    -fx-background-color: #1A1C22;
+    -fx-background-radius: 15 15 0 0;
+    -fx-padding: 0 15 0 14;
+}
+.card-top-text {
+    -fx-fill: #E4E4E4;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.card-top-circle {
+    -fx-fill: #790000;
+}
+
+.card-centre {
+    -fx-background-color: linear-gradient(to top right, #126770, #20333B);
+}
+.card-centre-text {
+    -fx-fill: #E4E4E4;
+    -fx-font-size: 64px;
+}
+.card-circle-style {
+    -fx-fill: transparent;
+    -fx-stroke: #E4E4E4;
+    -fx-stroke-width: 4;
+}
+
+.card-bottom {
+    -fx-background-color: #1A1C22;
+    -fx-background-radius: 0 0 15 15;
+    -fx-padding: 0 10 0 10;
+}
+.card-bottom-icon {
+    -fx-background-color: transparent;
+}
+.card-bottom-text {
+    -fx-fill: E4E4E4;
+    -fx-font-size: 20;
+    -fx-padding: 0 0 10 0;
+}
+.card-bottom-pane {
+    -fx-padding: 10 0 10 0;
+}
+.text-padding {
+    -fx-padding: 5.5 0 0 4;
+}

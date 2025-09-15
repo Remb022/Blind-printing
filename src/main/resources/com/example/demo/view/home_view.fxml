@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.view.HomeViewController"
+            stylesheets="@../css/view_home.css"
+            styleClass="home-view-style">
+    <ScrollPane fitToWidth="true" fitToHeight="true"
+                styleClass="scroll-pane-custom"
+                AnchorPane.topAnchor="0.0"
+                AnchorPane.bottomAnchor="0.0"
+                AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0">
+        <VBox styleClass="VBox-custom-style" spacing="36">
+            <HBox>
+                <Text text="Базовые уроки" styleClass="text-custom-style">
+                    <HBox.margin>
+                        <Insets top="30" left="50"/>
+                    </HBox.margin>
+                </Text>
+            </HBox>
+            <TilePane fx:id="basicLessons"
+                      styleClass="Tile-pane-custom"
+                      hgap="40"
+                      vgap="25"
+                      alignment="CENTER"
+                      AnchorPane.rightAnchor="0.0"
+                      AnchorPane.leftAnchor="0.0"/>
+        </VBox>
+    </ScrollPane>
+</AnchorPane>

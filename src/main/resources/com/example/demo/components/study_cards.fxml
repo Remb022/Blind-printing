@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.components.StudyCardsController"
+            stylesheets="@../css/card_study.css"
+            prefWidth="365"
+            styleClass="card-background">
+
+    <HBox AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0"
+          alignment="CENTER_LEFT"
+          prefHeight="50"
+          styleClass="card-top">
+        <Text text="ВА ОП" styleClass="card-top-text"/>
+
+        <Region HBox.hgrow="ALWAYS"/>
+        <StackPane>
+            <Circle radius="9" styleClass="card-top-circle"/>
+        </StackPane>
+    </HBox>
+
+    <HBox AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="50"
+          AnchorPane.bottomAnchor="40"
+          alignment="CENTER"
+          prefHeight="210"
+          styleClass="card-centre">
+        <StackPane>
+            <Text text="0.98" textAlignment="CENTER" styleClass="card-centre-text"/>
+            <Circle radius="88" styleClass="card-circle-style"/>
+        </StackPane>
+    </HBox>
+
+    <HBox AnchorPane.leftAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0"
+          alignment="CENTER_LEFT"
+          prefHeight="40"
+          minHeight="40"
+          maxHeight="40"
+          styleClass="card-bottom">
+        <HBox AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.topAnchor="0.0"
+              alignment="CENTER_LEFT">
+            <StackPane>
+                <SVGPath content="M15.9375 17.3958L17.3958 15.9375L13.5417 12.0833V7.29168H11.4583V12.9167L15.9375 17.3958ZM12.5 22.9167C11.059 22.9167 9.70486 22.6432 8.43749 22.0964C7.17013 21.5495 6.0677 20.8073 5.1302 19.8698C4.1927 18.9323 3.45052 17.8299 2.90364 16.5625C2.35677 15.2951 2.08333 13.941 2.08333 12.5C2.08333 11.059 2.35677 9.70487 2.90364 8.43751C3.45052 7.17015 4.1927 6.06772 5.1302 5.13022C6.0677 4.19272 7.17013 3.45053 8.43749 2.90366C9.70486 2.35678 11.059 2.08334 12.5 2.08334C13.941 2.08334 15.2951 2.35678 16.5625 2.90366C17.8299 3.45053 18.9323 4.19272 19.8698 5.13022C20.8073 6.06772 21.5495 7.17015 22.0963 8.43751C22.6432 9.70487 22.9167 11.059 22.9167 12.5C22.9167 13.941 22.6432 15.2951 22.0963 16.5625C21.5495 17.8299 20.8073 18.9323 19.8698 19.8698C18.9323 20.8073 17.8299 21.5495 16.5625 22.0964C15.2951 22.6432 13.941 22.9167 12.5 22.9167ZM12.5 20.8333C14.809 20.8333 16.7752 20.0217 18.3984 18.3984C20.0217 16.7752 20.8333 14.809 20.8333 12.5C20.8333 10.191 20.0217 8.22484 18.3984 6.60157C16.7752 4.97831 14.809 4.16668 12.5 4.16668C10.191 4.16668 8.22482 4.97831 6.60156 6.60157C4.97829 8.22484 4.16666 10.191 4.16666 12.5C4.16666 14.809 4.97829 16.7752 6.60156 18.3984C8.22482 20.0217 10.191 20.8333 12.5 20.8333Z" fill="#E4E4E4" />
+            </StackPane>
+            <HBox styleClass="text-padding">
+                <Text text="10:00" styleClass="card-bottom-text"/>
+            </HBox>
+        </HBox>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <HBox AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.topAnchor="0.0"
+              alignment="CENTER_LEFT">
+            <ImageView preserveRatio="true" fitWidth="25" fitHeight="25">
+                <Image url="@../icon/target.png"/>
+            </ImageView>
+            <HBox styleClass="text-padding">
+                <Text text="100%" styleClass="card-bottom-text"/>
+            </HBox>
+        </HBox>
+    </HBox>
+</AnchorPane>
