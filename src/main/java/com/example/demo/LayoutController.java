@@ -14,11 +14,7 @@ public class LayoutController {
     @FXML
     public void initialize() {
         System.out.println("Инициализация LayoutController");
-        showMenu().setLayoutController(this);
-    }
-
-    public AnchorPane getScenePane() {
-        return scenePane;
+        (showMenu(menuPane, "components/menu.fxml", MenuController.class)).setLayoutController(this);
     }
 
     //Установка view в contentPane при вызове метода из MenuController
@@ -38,11 +34,11 @@ public class LayoutController {
 
 
     //Установка menu и привязка контроллера к LayoutController
-    private MenuController showMenu() {
+    private <T> T showMenu(AnchorPane contentContainer, String file, Class<T> controllerClass) {
         try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("components/menu.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource(file));
             VBox pane = loader.load();
-            menuPane.getChildren().setAll(pane);
+            contentContainer.getChildren().setAll(pane);
             AnchorPane.setBottomAnchor(pane, 0.0);
             AnchorPane.setTopAnchor(pane, 0.0);
             AnchorPane.setLeftAnchor(pane, 0.0);
@@ -51,21 +47,6 @@ public class LayoutController {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
-        }
-    }
-    public void setBlindPrinting() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/demo/activity/blind_printing_activity.fxml"));
-            AnchorPane pane = loader.load();
-            LayoutController layoutController = loader.getController();
-            AnchorPane scenePane = layoutController.getScenePane();
-            scenePane.getChildren().setAll(pane);
-            AnchorPane.setBottomAnchor(pane, 0.0);
-            AnchorPane.setTopAnchor(pane, 0.0);
-            AnchorPane.setLeftAnchor(pane, 0.0);
-            AnchorPane.setRightAnchor(pane, 0.0);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }
