@@ -1,6 +1,8 @@
 package com.example.demo.components;
 
 import com.example.demo.LayoutController;
+import com.example.demo.activity.BlindPrintingController;
+import com.example.demo.view.HomeViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import java.util.Arrays;
@@ -16,10 +18,19 @@ public class MenuController {
     private LayoutController layoutController;
     private List<Button> buttonList;
 
+
     //Передача ссылки для использования методов данного Layout
     public void setLayoutController(LayoutController layoutController) {
         this.layoutController = layoutController;
+        // Загружаем домашнюю страницу с передачей ссылки
+        HomeViewController homeController =
+                this.layoutController.loadContentPaneWithController("view/home_view.fxml", HomeViewController.class);
+        if (homeController != null) {
+            homeController.setLayoutController(this.layoutController);
+        }
     }
+
+
 
     @FXML
     private void initialize() {
@@ -28,30 +39,49 @@ public class MenuController {
         buttonList = Arrays.asList(home, progress, info, award, settings);
 
         home.setOnAction(e -> {
-            layoutController.loadContentPane("view/home_view.fxml");
-            setActiveButton(home);
+            if (layoutController != null) {
+                HomeViewController homeController =
+                        layoutController.loadContentPaneWithController("view/home_view.fxml", HomeViewController.class);
+                if (homeController != null) {
+                    homeController.setLayoutController(layoutController);
+                }
+                setActiveButton(home);
+            }
         });
 
+
         progress.setOnAction(e -> {
-            layoutController.loadContentPane("view/progress_view.fxml");
-            setActiveButton(progress);
+            if (layoutController != null) {
+                layoutController.loadContentPane("view/progress_view.fxml");
+                setActiveButton(progress);
+            }
         });
 
         info.setOnAction(e -> {
-            layoutController.loadContentPane("view/info_view.fxml");
-            setActiveButton(info);
+            if (layoutController != null) {
+                layoutController.loadContentPane("view/info_view.fxml");
+                setActiveButton(info);
+            }
         });
 
         award.setOnAction(e -> {
-            layoutController.loadContentPane("view/award_view.fxml");
-            setActiveButton(award);
+            if (layoutController != null) {
+                layoutController.loadContentPane("view/award_view.fxml");
+                setActiveButton(award);
+            }
         });
 
         settings.setOnAction(e -> {
-            layoutController.loadContentPane("view/settings_view.fxml");
-            setActiveButton(settings);
+            if (layoutController != null) {
+                layoutController.loadContentPane("view/settings_view.fxml");
+                setActiveButton(settings);
+            }
         });
+
+        // Устанавливаем активную кнопку "home" по умолчанию
+        setActiveButton(home);
     }
+
 
     private void setActiveButton(Button activeBtn) {
         for (Button btn : buttonList) {
@@ -60,4 +90,5 @@ public class MenuController {
         activeBtn.getStyleClass().add("active-button-menu");
         System.out.println("Нажата кнопка меню: " + activeBtn.getId());
     }
+
 }
