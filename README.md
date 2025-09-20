@@ -21,17 +21,7 @@ git clone https://github.com/Kinza945/Blind-printing.git
 cd Blind-printing
 ```
 
-2. Соберите проект с помощью Maven:
-```bash
-./mvnw clean install
-```
-
-3. Запустите приложение:
-```bash
-./mvnw spring-boot:run
-```
-
-4. Откройте браузер и перейдите по адресу: `http://localhost:8080`
+2. Соберите проект.
 
 ## Планируемые функции
 
