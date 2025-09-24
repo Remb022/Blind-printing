@@ -1,6 +1,7 @@
 package com.example.demo.components;
 
 import com.example.demo.LayoutController;
+import com.example.demo.view.HomeViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import java.util.Arrays;
@@ -28,7 +29,7 @@ public class MenuController {
         buttonList = Arrays.asList(home, progress, info, award, settings);
 
         home.setOnAction(e -> {
-            layoutController.loadContentPane("view/home_view.fxml");
+            (layoutController.loadContentPane("view/home_view.fxml", HomeViewController.class)).setLayoutController(layoutController);
             setActiveButton(home);
         });
 

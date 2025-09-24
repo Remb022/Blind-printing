@@ -1,5 +1,6 @@
 package com.example.demo.view;
 
+import com.example.demo.LayoutController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -8,6 +9,9 @@ import java.io.IOException;
 
 public class HomeViewController {
     @FXML TilePane basicLessons;
+    private LayoutController layoutController;
+
+    public void setLayoutController(LayoutController layoutController) {this.layoutController = layoutController;}
 
     public void initialize() {
         System.out.println("Инициализация Home_view");
@@ -27,6 +31,7 @@ public class HomeViewController {
                 //Программа запоминает какой ID выводить при нажатии на карточки и потом просто выводит запомнившийся код
                 pane.setOnMouseClicked(mouseEvent -> {
                     System.out.println("Нажата карточка: " + pane.getId());
+                    layoutController.loadScenePane();
                 });
                 basicLessons.getChildren().add(pane);
             } catch (IOException e) {
