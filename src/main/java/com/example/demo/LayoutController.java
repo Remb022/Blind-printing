@@ -4,6 +4,7 @@ import com.example.demo.components.MenuController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 public class LayoutController {
@@ -70,7 +71,7 @@ public class LayoutController {
     public void loadScenePane() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("activity/blind_printing_activity.fxml"));
-            AnchorPane pane = loader.load();
+            StackPane pane = loader.load();
             scenePane.getChildren().setAll(pane);
             AnchorPane.setBottomAnchor(pane, 0.0);
             AnchorPane.setTopAnchor(pane, 0.0);

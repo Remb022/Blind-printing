@@ -11,6 +11,7 @@
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.demo.components.TopBarController"
       stylesheets="@../css/top_bar.css"
+      fx:id="topBar"
       styleClass="top-bar"
       alignment="CENTER_LEFT"
       prefHeight="45">

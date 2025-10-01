@@ -12,7 +12,7 @@
 .card-top-text {
     -fx-fill: #E4E4E4;
     -fx-font-size: 20px;
-    -fx-font-weight: bold;
+    -fx-font-weight: bold;;
 }
 .card-top-circle {
     -fx-fill: #790000;

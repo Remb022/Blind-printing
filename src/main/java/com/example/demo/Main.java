@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.components.TopBarController;
 import com.example.demo.databases.DBUserResults;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -24,13 +25,13 @@ public class Main extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
 
         //Подключаем файл с отображаемым
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("layouts/main_layout.fxml"));
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("layouts/main_layout.fxml"));
 
         //Получаем размеры экрана
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 
         //Настраиваем сцену, подключаем файл, задаем высоту, задаем ширину
-        Scene scene = new Scene(fxmlLoader.load(), screenBounds.getWidth(), screenBounds.getHeight());
+        Scene scene = new Scene(loader.load(), screenBounds.getWidth(), screenBounds.getHeight());
 
         //Разворачиваем приложение на весь экран заведомо
         stage.setScene(scene);
