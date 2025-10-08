@@ -28,6 +28,8 @@ public class MenuController {
 
         buttonList = Arrays.asList(home, progress, info, award, settings);
 
+        setActiveButton(home);
+
         home.setOnAction(e -> {
             (layoutController.loadContentPane("view/home_view.fxml", HomeViewController.class)).setLayoutController(layoutController);
             setActiveButton(home);

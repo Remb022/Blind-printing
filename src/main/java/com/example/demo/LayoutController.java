@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.components.MenuController;
+import com.example.demo.view.HomeViewController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -15,6 +16,7 @@ public class LayoutController {
     @FXML
     public void initialize() {
         System.out.println("Инициализация LayoutController");
+        (loadContentPane("view/home_view.fxml", HomeViewController.class)).setLayoutController(this);
         showMenu();
     }
 

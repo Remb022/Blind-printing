@@ -32,7 +32,7 @@
             styleClass="top-bar-button">
         <graphic>
             <ImageView preserveRatio="true" fitHeight="20" fitWidth="20">
-                <Image url="@../icon/roll up.png"/>
+                <Image url="@../icon/Roll_up.png"/>
             </ImageView>
         </graphic>
     </Button>
@@ -43,7 +43,7 @@
             styleClass="top-bar-button">
         <graphic>
             <ImageView preserveRatio="true" fitHeight="15" fitWidth="15">
-                <Image url="@../icon/two squares.png"/>
+                <Image url="@../icon/Two_squares.png"/>
             </ImageView>
         </graphic>
     </Button>
@@ -54,7 +54,7 @@
             styleClass="top-bar-button">
         <graphic>
             <ImageView preserveRatio="true" fitWidth="20" fitHeight="20">
-                <Image url="@../icon/close.png"/>
+                <Image url="@../icon/Close.png"/>
             </ImageView>
         </graphic>
     </Button>

@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.components.TopBarController;
 import com.example.demo.databases.DBUserResults;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

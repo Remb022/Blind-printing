@@ -13,7 +13,6 @@ public class DBUserResults {
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "title TEXT, " +
                 "content TEXT)";
-
         try (Connection conn = getConnection();
         Statement stmt = conn.createStatement()) {
             stmt.execute(sql);

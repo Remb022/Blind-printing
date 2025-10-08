@@ -70,7 +70,7 @@
               AnchorPane.topAnchor="0.0"
               alignment="CENTER_LEFT">
             <ImageView preserveRatio="true" fitWidth="25" fitHeight="25">
-                <Image url="@../icon/target.png"/>
+                <Image url="@../icon/Target.png"/>
             </ImageView>
             <HBox styleClass="text-padding">
                 <Text text="100%" styleClass="card-bottom-text"/>

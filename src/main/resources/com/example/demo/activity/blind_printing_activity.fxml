@@ -4,6 +4,8 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
 
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
@@ -13,18 +15,6 @@
     <AnchorPane styleClass="back-color"
                 maxHeight="Infinity"
                 maxWidth="Infinity">
-
-        <!-- Иконка выхода -->
-        <HBox alignment="CENTER"
-              styleClass="more-vert"
-              AnchorPane.rightAnchor="0.0"
-              AnchorPane.topAnchor="0.0">
-            <ImageView preserveRatio="true" fitHeight="40" fitWidth="40">
-                <image>
-                    <Image url="@../icon/More_vert.png"/>
-                </image>
-            </ImageView>
-        </HBox>
 
         <VBox alignment="CENTER"
               AnchorPane.leftAnchor="0.0"
@@ -38,12 +28,15 @@
             </HBox>
 
             <!-- Набор текста -->
-            <VBox alignment="CENTER" maxWidth="700" prefWidth="700">
+            <VBox alignment="CENTER"
+                  maxWidth="700"
+                  prefWidth="700">
+
                 <HBox prefHeight="90" maxHeight="90"/>
 
                 <!-- Набор текста -->
-                <HBox alignment="CENTER_LEFT" styleClass="h-box-text">
-                    <Text text="набирающийся текст" styleClass="text"/>
+                <HBox alignment="CENTER_LEFT">
+                    <TextField prefWidth="700" maxWidth="700" styleClass="text-field"/>
                 </HBox>
 
                 <!-- Полоса -->
@@ -54,11 +47,72 @@
 
                 <!-- Текст -->
                 <HBox alignment="CENTER_LEFT" styleClass="h-box-text">
-                    <Text text="какой-то там текст" styleClass="text"/>
+                    <Text text="какой-то там текст" styleClass="text" wrappingWidth="700" />
                 </HBox>
+
+                <HBox prefHeight="90" maxHeight="90"/>
+
+                <!-- Кнопки -->
+                <HBox alignment="CENTER_RIGHT" spacing="5">
+                    <!-- Кнопка автоматического стирания -->
+                    <Button styleClass="button-in-activity">
+                        <graphic>
+                            <ImageView preserveRatio="true" fitWidth="31" fitHeight="31">
+                                <Image url="@../icon/Delete_normal.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <!-- Кнопка показа клавиатуры -->
+                    <Button styleClass="button-in-activity">
+                        <graphic>
+                            <ImageView preserveRatio="true" fitWidth="35" fitHeight="35">
+                                <Image url="@../icon/Keyboard_normal.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+
             </VBox>
 
         </VBox>
 
+        <!-- Кнопка выхода -->
+        <HBox alignment="CENTER"
+              styleClass="more-vert"
+              AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <Button fx:id="buttonMoreVert" styleClass="button-in-activity">
+                <graphic>
+                    <ImageView fx:id="imageMoreVert" preserveRatio="true" fitHeight="40" fitWidth="40"/>
+                </graphic>
+            </Button>
+        </HBox>
+
     </AnchorPane>
+
+    <AnchorPane visible="false"
+                disable="true">
+        <HBox alignment="CENTER"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0">
+            <VBox alignment="CENTER"
+                  prefWidth="300"
+                  prefHeight="100"
+                  maxWidth="300"
+                  maxHeight="100"
+                  styleClass="card">
+                <Button text="Выйти"
+                        prefWidth="Infinity"
+                        maxWidth="Infinity"
+                        prefHeight="20"
+                        maxHeight="20"
+                        alignment="CENTER"
+                        styleClass="card-button"/>
+            </VBox>
+        </HBox>
+
+    </AnchorPane>
+
 </StackPane>

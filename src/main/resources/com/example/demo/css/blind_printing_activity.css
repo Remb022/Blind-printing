@@ -12,9 +12,43 @@
     -fx-background-color: #222831;
 }
 .h-box-text {
-    -fx-padding: 0 0 0 1;
+    -fx-padding: 0 0 0 2;
+}
+.text-field {
+    -fx-text-fill: #E4E4E4;
+    -fx-font-size: 19px;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 1;
 }
 .text {
     -fx-fill: #E4E4E4;
     -fx-font-size: 19px;
+}
+.button-in-activity {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0px;
+    -fx-border-width: 0px;
+    -fx-border-radius: 0px;
+    -fx-border-insets: 0px;
+    -fx-effect: null;
+}
+.card {
+    -fx-background-color: #222831;
+    -fx-background-radius: 15px;
+}
+.card-button {
+    -fx-text-fill: #E4E4E4;
+    -fx-font-size: 19px;
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0px;
+    -fx-border-width: 0px;
+    -fx-border-radius: 0px;
+    -fx-border-insets: 0px;
+    -fx-effect: null;
 }

@@ -13,7 +13,8 @@ public class HomeViewController {
 
     public void setLayoutController(LayoutController layoutController) {this.layoutController = layoutController;}
 
-    public void initialize() {
+    @FXML
+    private void initialize() {
         System.out.println("Инициализация Home_view");
         setCardsBasicLessons();
     }
