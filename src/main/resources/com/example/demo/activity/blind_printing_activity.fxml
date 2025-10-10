@@ -12,7 +12,8 @@
            fx:controller="com.example.demo.activity.BlindPrintingController"
            stylesheets="@../css/blind_printing_activity.css">
 
-    <AnchorPane styleClass="back-color"
+    <AnchorPane fx:id="layout"
+                styleClass="back-color"
                 maxHeight="Infinity"
                 maxWidth="Infinity">
 
@@ -55,17 +56,17 @@
                 <!-- Кнопки -->
                 <HBox alignment="CENTER_RIGHT" spacing="5">
                     <!-- Кнопка автоматического стирания -->
-                    <Button styleClass="button-in-activity">
+                    <Button fx:id="buttonDelete" styleClass="button-in-activity">
                         <graphic>
-                            <ImageView preserveRatio="true" fitWidth="31" fitHeight="31">
+                            <ImageView fx:id="imageDelete" preserveRatio="true" fitWidth="31" fitHeight="31">
                                 <Image url="@../icon/Delete_normal.png"/>
                             </ImageView>
                         </graphic>
                     </Button>
                     <!-- Кнопка показа клавиатуры -->
-                    <Button styleClass="button-in-activity">
+                    <Button fx:id="buttonKeyboard" styleClass="button-in-activity">
                         <graphic>
-                            <ImageView preserveRatio="true" fitWidth="35" fitHeight="35">
+                            <ImageView fx:id="imageKeyboard" preserveRatio="true" fitWidth="35" fitHeight="35">
                                 <Image url="@../icon/Keyboard_normal.png"/>
                             </ImageView>
                         </graphic>
@@ -83,36 +84,53 @@
               AnchorPane.topAnchor="0.0">
             <Button fx:id="buttonMoreVert" styleClass="button-in-activity">
                 <graphic>
-                    <ImageView fx:id="imageMoreVert" preserveRatio="true" fitHeight="40" fitWidth="40"/>
+                    <ImageView fx:id="imageMoreVert" preserveRatio="true" fitHeight="40" fitWidth="40">
+                        <Image url="@../icon/More_vert_normal.png"/>
+                    </ImageView>
                 </graphic>
             </Button>
         </HBox>
 
     </AnchorPane>
 
-    <AnchorPane visible="false"
-                disable="true">
+    <AnchorPane fx:id="stopCard"
+                visible="false"
+                disable="true"
+                styleClass="card-background">
         <HBox alignment="CENTER"
               AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0"
               AnchorPane.topAnchor="0.0"
               AnchorPane.bottomAnchor="0.0">
+            <!-- Стоп карточка -->
             <VBox alignment="CENTER"
-                  prefWidth="300"
-                  prefHeight="100"
-                  maxWidth="300"
-                  maxHeight="100"
+                  prefHeight="Infinity"
+                  prefWidth="Infinity"
+                  maxHeight="300"
+                  maxWidth="400"
                   styleClass="card">
-                <Button text="Выйти"
-                        prefWidth="Infinity"
+                <Button fx:id="buttonResume"
+                        text="Продолжить"
                         maxWidth="Infinity"
-                        prefHeight="20"
-                        maxHeight="20"
+                        maxHeight="Infinity"
+                        VBox.vgrow="ALWAYS"
+                        alignment="CENTER"
+                        styleClass="card-button"/>
+                <Button fx:id="buttonAgain"
+                        text="Начать заново"
+                        maxHeight="Infinity"
+                        maxWidth="Infinity"
+                        VBox.vgrow="ALWAYS"
+                        alignment="CENTER"
+                        styleClass="card-button"/>
+                <Button fx:id="buttonExit"
+                        text="Выйти"
+                        maxWidth="Infinity"
+                        maxHeight="Infinity"
+                        VBox.vgrow="ALWAYS"
                         alignment="CENTER"
                         styleClass="card-button"/>
             </VBox>
         </HBox>
-
     </AnchorPane>
-
 </StackPane>

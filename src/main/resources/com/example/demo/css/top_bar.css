@@ -2,7 +2,7 @@
     -fx-background-color: #222831;
     -fx-padding: 0px 0px 0px 15px;
     -fx-border-color: #393E46;
-    -fx-border-width: 0 0 3 0; /* только нижняя граница */
+    -fx-border-width: 0 0 0 0; /* только нижняя граница */
 }
 .top-bar-button {
     -fx-background-color: transparent;

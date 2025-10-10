@@ -4,40 +4,72 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
-import java.io.InputStream;
+import java.util.Objects;
 
-public class BlindPrintingController { ;
-    @FXML private Button buttonMoreVert;
-    @FXML private ImageView imageMoreVert;
+public class BlindPrintingController {
+    //Компоненты активности
+    @FXML private Button buttonMoreVert, buttonKeyboard, buttonDelete;
+    @FXML private ImageView imageMoreVert, imageKeyboard, imageDelete;
+    @FXML private AnchorPane layout;
+    //Компоненты стоп карточки
+    @FXML private Button buttonResume, buttonExit, buttonAgain;
+    @FXML private AnchorPane stopCard;
 
     @FXML
     private void initialize() {
         System.out.println("Инициализация BlindPrintingController");
 
-        Image image = new Image(getClass().getResourceAsStream("../icon/More_vert_normal.png"));
-        imageMoreVert.setImage(image);
-        //glowOnHover(buttonMoreVert, imageMoreVert,"icon/More_vert_active.png","icon/More_vert_normal.png");
+        blindPrintingStop(buttonMoreVert);
+        blindPrintingResume(buttonResume);
+
+        //Анимации подсвечивания
+        glowOnHover(buttonMoreVert, imageMoreVert, "/com/example/demo/icon/More_vert_active.png", "/com/example/demo/icon/More_vert_normal.png");
+        glowOnHover(buttonKeyboard, imageKeyboard, "/com/example/demo/icon/Keyboard_active.png", "/com/example/demo/icon/Keyboard_normal.png");
+        glowOnHover(buttonDelete, imageDelete, "/com/example/demo/icon/Delete_active.png", "/com/example/demo/icon/Delete_normal.png");
     }
 
-    private void glowOnHover(Button button, ImageView imageView, String activeIconPath, String normalIconPath) {
-        InputStream normalStream = getClass().getResourceAsStream(normalIconPath);
-        InputStream activeStream = getClass().getResourceAsStream(activeIconPath);
+    //Метод реализации свечения кнопки спомощью подмены содержимого иконки кнопки
+    private void glowOnHover(Button button, ImageView imageView, String imageActivePatch, String imageNormalPatch) {
+        Image imageActive = new Image(Objects.requireNonNull(getClass().getResource(imageActivePatch)).toExternalForm());
+        Image imageNormal = new Image(Objects.requireNonNull(getClass().getResource(imageNormalPatch)).toExternalForm());
 
-        if (normalStream == null) {
-            throw new IllegalArgumentException("Ресурс не найден: " + normalIconPath);
-        }
-        if (activeStream == null) {
-            throw new IllegalArgumentException("Ресурс не найден: " + activeIconPath);
-        }
+        imageView.setImage(imageNormal);
 
-        Image normalImage = new Image(normalStream);
-        Image activeImage = new Image(activeStream);
+        button.setOnMouseClicked(mouseEvent -> {
+            boolean isPressed = Boolean.TRUE.equals(button.getUserData());
 
-        button.setOnMouseEntered(event -> imageView.setImage(activeImage));
-        button.setOnMouseExited(event -> imageView.setImage(normalImage));
+            isPressed = !isPressed;
+            button.setUserData(isPressed);
+
+            imageView.setImage(isPressed ? imageActive : imageNormal);
+        });
+
+        button.setOnMouseEntered(mouseEvent -> {
+            if (!Boolean.TRUE.equals(button.getUserData())) {
+                imageView.setImage(imageActive);
+            }
+        });
+
+        button.setOnMouseExited(mouseEvent -> {
+            if (!Boolean.TRUE.equals(button.getUserData())) {
+                imageView.setImage(imageNormal);
+            }
+        });
     }
-
-
-
+    private void blindPrintingStop(Button button) {
+        button.setOnAction(mouseEvent -> {
+            System.out.println("Нажата кнопка остановить");
+            stopCard.setDisable(false);
+            stopCard.setVisible(true);
+        });
+    }
+    private void blindPrintingResume(Button button) {
+        button.setOnAction(mouseEvent -> {
+            System.out.println("Нажата кнопка продолжить");
+            stopCard.setDisable(true);
+            stopCard.setVisible(false);
+        });
+    }
 }
