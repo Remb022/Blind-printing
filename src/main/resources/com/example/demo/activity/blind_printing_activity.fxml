@@ -25,7 +25,9 @@
             <!-- Таймер -->
             <HBox prefHeight="50"
                   alignment="CENTER">
-                <Text text="01:20" styleClass="timer"/>
+                <Text fx:id="timerText"
+                      text="00:00"
+                      styleClass="timer"/>
             </HBox>
 
             <!-- Набор текста -->
@@ -85,7 +87,7 @@
             <Button fx:id="buttonMoreVert" styleClass="button-in-activity">
                 <graphic>
                     <ImageView fx:id="imageMoreVert" preserveRatio="true" fitHeight="40" fitWidth="40">
-                        <Image url="@../icon/More_vert_normal.png"/>
+                        <Image url="@../icon/More_vert_active.png"/>
                     </ImageView>
                 </graphic>
             </Button>
